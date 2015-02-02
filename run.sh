@@ -1,7 +1,7 @@
 #!/bin/bash
 while :
 do
-    pyhon crawl.py
+    python crawl.py
     #month=`date +%m`
     #day=`date +%d`
     #git add .
