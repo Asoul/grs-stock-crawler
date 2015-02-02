@@ -8,7 +8,7 @@ cr = csv.reader(f, delimiter=',')
 cr.next()
 cr.next()
 
-discard_lists = ['認購權證', '認售權證', '熊證', '牛證', '受益證券']
+discard_lists = ['認購權證', '認售權證', '熊證', '牛證', '認購售權證']
 
 file_lists = []
 
