@@ -30,7 +30,7 @@ def main():
     skipFlag = True if len(sys.argv) > 1 else False
     for stock_index in index_lists:
         if skipFlag:
-            if stock_index != int(sys.argv[1]):
+            if stock_index != sys.argv[1]:
                 continue
             else:
                 skipFlag = False
