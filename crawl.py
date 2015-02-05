@@ -27,7 +27,14 @@ def main():
     for row in cr:
         index_lists.append(row[0])
 
+    skipFlag = True if len(sys.argv) > 1 else False
     for stock_index in index_lists:
+        if skipFlag:
+            if stock_index != int(sys.argv[1]):
+                continue
+            else:
+                skipFlag = False
+
         filename = join(PATH_OF_DATA, stock_index+'.csv')
         if isfile(filename):# 如果已經有檔案，就讀出最後一行然後插入在後面
             print stock_index, 'exist!'
