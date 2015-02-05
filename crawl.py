@@ -45,8 +45,11 @@ def main():
                 print stock_index, "not found!"
                 continue
             
-            if len(st.raw) == 0:# 近三個月無資料
-                print "近一個月無資料"
+            try:
+                if len(st.raw) == 0:# 近三個月無資料
+                    print "近一個月無資料"
+                    continue
+            except:# len(st.raw) 沒資料可能會 error
                 continue
 
             # 預設不會超過三個月沒有抓資料
