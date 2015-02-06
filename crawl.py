@@ -28,12 +28,16 @@ def main():
         index_lists.append(row[0])
 
     skipFlag = True if len(sys.argv) > 1 else False
+    tillFlag = True if len(sys.argv) > 2 else False
     for stock_index in index_lists:
         if skipFlag:
             if stock_index != sys.argv[1]:
                 continue
             else:
                 skipFlag = False
+        if tillFlag:
+            if stock_index == sys.argv[2]:
+                break
 
         filename = join(PATH_OF_DATA, stock_index+'.csv')
         if isfile(filename):# 如果已經有檔案，就讀出最後一行然後插入在後面
